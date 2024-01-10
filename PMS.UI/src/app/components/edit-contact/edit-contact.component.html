@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Add new contact</h1>
+    <div class="row">
+      <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="updateContact()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control bg-light" id="username" name="username" readonly [(ngModel)]="updateContactRequest.username" />
+          </div>
+          <div class="mb-3">
+            <label for="mail" class="form-label">Mail</label>
+            <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="updateContactRequest.mail" />
+          </div>
+          <div class="mb-3">
+            <label for="phoneNo" class="form-label">PhoneNo</label>
+            <input type="text" class="form-control" id="phoneNo" name="phoneNo" [(ngModel)]="updateContactRequest.phoneNo" />
+          </div>
+          <div class="mb-3">
+            <label for="skillset" class="form-label">Skillset</label>
+            <input type="text" class="form-control" id="skillset" name="skillset" [(ngModel)]="updateContactRequest.skillset" />
+          </div>
+          <div class="mb-3">
+            <label for="hobby" class="form-label">Hobby</label>
+            <input type="text" class="form-control" id="hobby" name="hobby" [(ngModel)]="updateContactRequest.hobby" />
+          </div>
+          <div class="mb-3" [style.visibility]="'hidden'">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control bg-light" id="id" name="id" readonly [(ngModel)]="updateContactRequest.id" />
+            </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

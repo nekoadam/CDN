@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Contact Details</h1>
+    <table class="table" *ngIf="contacts && contacts.length > 0">
+        <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Mail</th>
+            <th scope="col">PhoneNo</th>
+            <th scope="col">Skillset</th>
+            <th scope="col">Hobby</th>
+            <th></th>
+            <th></th>
+            <div [style.visibility]="'hidden'"> <th scope="col">Id#</th></div>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let contact of contacts">
+            <th>{{ contact.username }}</th>
+            <th>{{ contact.mail }}</th>
+            <th>{{ contact.phoneNo }}</th>
+            <th>{{ contact.skillset }}</th>
+            <th>{{ contact.hobby }}</th>
+            <th><a [routerLink]="['/contacts','edit',contact.id]">Edit</a></th>   
+            <th><a [routerLink]="[]" (click)="deleteContact(contact.id)">Delete</a></th>             
+            <div [style.visibility]="'hidden'"><th>{{ contact.id }}</th></div> 
+        </tr>        
+        </tbody>
+    </table>
+    <p *ngIf="!contacts || contacts.length == 0">No Contacts Found!</p>
+</div>
